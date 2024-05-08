@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+
+use function Pest\Laravel\be;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +45,7 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function asUser(): TestCase
 {
-    // ..
+    return be(User::factory()->create());
 }
