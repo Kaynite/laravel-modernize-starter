@@ -5,15 +5,17 @@ export interface User {
     name: string;
     email: string;
     email_verified_at: string;
-    config: {
-        mini_sidebar: boolean;
-        theme: string;
-        locale: string;
-        is_horizontal: boolean;
-        is_rtl: boolean;
-        is_boxed: boolean;
-        is_card_bordered: boolean;
-    };
+    config: UserConfig;
+}
+
+export interface UserConfig {
+    mini_sidebar: boolean;
+    theme: string;
+    locale: string;
+    is_horizontal: boolean;
+    is_rtl: boolean;
+    is_boxed: boolean;
+    is_card_bordered: boolean;
 }
 
 export interface PaginatedCollection<Model> {
@@ -28,7 +30,6 @@ export interface PaginatedCollection<Model> {
         total: number;
     }
 }
-
 
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
     auth: {

@@ -3,12 +3,15 @@ import BaseBreadcrumb from "@/components/shared/BaseBreadcrumb.vue";
 import UiParentCard from "@/components/shared/UiParentCard.vue";
 import FullLayout from "@/layouts/full/FullLayout.vue";
 import { router, useForm } from "@inertiajs/vue3";
-import { ref } from "vue";
+import { inject, ref } from "vue";
 import UserForm from './UserForm.vue';
+import { route as routeFn } from '../../../../vendor/tightenco/ziggy/src/js';
 
 defineOptions({
     layout: FullLayout,
 });
+
+const route = inject('route', routeFn)
 
 const page = ref<{ title: string }>({ title: "Create new user" });
 
